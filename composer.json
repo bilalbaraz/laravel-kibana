@@ -1,0 +1,29 @@
+{
+    "name": "bilalbaraz/laravel-kibana",
+    "description": "This allows you to use your kibana api",
+    "keywords": ["laravel", "kibana"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bilal Baraz",
+            "email": "bilalbaraz@windowslive.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bilalbaraz\\LaravelKibana\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bilalbaraz\\LaravelKibana\\LaravelKibanaServiceProvider"
+            ]
+        }
+    }
+}
