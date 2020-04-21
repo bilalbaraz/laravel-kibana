@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Bilalbaraz\\LaravelKibana\\LaravelKibanaServiceProvider"
+                "Bilalbaraz\\LaravelKibana\\KibanaServiceProvider"
             ]
         }
     }

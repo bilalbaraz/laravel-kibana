@@ -15,7 +15,7 @@ class KibanaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__ . '/../config/kibana.php', 'config');
     }
 
     /**
@@ -23,6 +23,6 @@ class KibanaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([__DIR__ . '/../config/kibana.php' => config_path('kibana.php')], 'config');
     }
 }
