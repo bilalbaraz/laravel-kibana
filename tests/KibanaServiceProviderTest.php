@@ -5,7 +5,7 @@ namespace Bilalbaraz\LaravelKibana\Tests;
 use Bilalbaraz\LaravelKibana\KibanaServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use PHPUnit\Framework\MockObject\MockObject;
+use Mockery;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,13 +15,12 @@ use PHPUnit\Framework\TestCase;
  */
 class KibanaServiceProviderTest extends TestCase
 {
-    /** @var MockObject|Application $application */
     private $application;
     private $serviceProvider;
 
     protected function setUp(): void
     {
-        $this->application = \Mockery::mock(Application::class);
+        $this->application = Mockery::mock(Application::class);
         $this->serviceProvider = new KibanaServiceProvider($this->application);
         parent::setUp();
     }
