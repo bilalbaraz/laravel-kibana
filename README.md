@@ -18,6 +18,12 @@ composer require bilalbaraz/laravel-kibana
 
 T.B.D.
 
+### Test
+
+```bash
+./vendor/bin/phpunit tests
+```
+
 ## License
 
 The MIT License (MIT)
