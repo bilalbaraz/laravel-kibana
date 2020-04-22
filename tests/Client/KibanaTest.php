@@ -46,7 +46,10 @@ class KibanaTest extends TestCase
     {
         $this->getClassMock(['getKibanaBaseUrl']);
 
-        $this->assertEquals(self::CONFIG['host'] . ':' . self::CONFIG['port'], $this->kibana->getKibanaBaseUrl());
+        $this->assertEquals(
+            self::CONFIG['host'] . ':' . self::CONFIG['port'] . '/api/',
+            $this->kibana->getKibanaBaseUrl()
+        );
     }
 
     /**
@@ -69,7 +72,7 @@ class KibanaTest extends TestCase
     function it_should_get_features()
     {
         $this->getClassMock(['getFeatures']);
-        $fullUrl = self::CONFIG['host'] . ':' . self::CONFIG['port'];
+        $fullUrl = self::CONFIG['host'] . ':' . self::CONFIG['port'] . '/api/';
         $array = json_decode(self::JSON, true);
 
         $this->kibana
@@ -79,7 +82,7 @@ class KibanaTest extends TestCase
         $this->kibana
             ->expects($this->once())
             ->method('makeRequest')
-            ->with($fullUrl . '/api/features')
+            ->with($fullUrl . 'features')
             ->willReturn(self::JSON);
         $this->kibana
             ->expects($this->once())
@@ -88,6 +91,92 @@ class KibanaTest extends TestCase
             ->willReturn($array);
 
         $this->assertEquals($array, $this->kibana->getFeatures());
+    }
+
+    /**
+     * @test
+     * @covers ::getSpaces
+     */
+    function it_should_get_spaces()
+    {
+        $this->getClassMock(['getSpaces']);
+        $fullUrl = self::CONFIG['host'] . ':' . self::CONFIG['port'] . '/api/';
+        $array = json_decode(self::JSON, true);
+
+        $this->kibana
+            ->expects($this->once())
+            ->method('getKibanaBaseUrl')
+            ->willReturn($fullUrl);
+        $this->kibana
+            ->expects($this->once())
+            ->method('makeRequest')
+            ->with($fullUrl . 'spaces/space')
+            ->willReturn(self::JSON);
+        $this->kibana
+            ->expects($this->once())
+            ->method('toArray')
+            ->with(self::JSON)
+            ->willReturn($array);
+
+        $this->assertEquals($array, $this->kibana->getSpaces());
+    }
+
+    /**
+     * @test
+     * @covers ::getSpace
+     */
+    function it_should_get_space_by_space_id()
+    {
+        $this->getClassMock(['getSpace']);
+        $fullUrl = self::CONFIG['host'] . ':' . self::CONFIG['port'] . '/api/';
+        $array = json_decode(self::JSON, true);
+        $spaceId = 'default';
+
+        $this->kibana
+            ->expects($this->once())
+            ->method('getKibanaBaseUrl')
+            ->willReturn($fullUrl);
+        $this->kibana
+            ->expects($this->once())
+            ->method('makeRequest')
+            ->with($fullUrl . 'spaces/space/' . $spaceId)
+            ->willReturn(self::JSON);
+        $this->kibana
+            ->expects($this->once())
+            ->method('toArray')
+            ->with(self::JSON)
+            ->willReturn($array);
+
+        $this->assertEquals($array, $this->kibana->getSpace($spaceId));
+    }
+
+    /**
+     * @test
+     * @covers ::createSpace
+     */
+    function it_should_create_space()
+    {
+        $this->getClassMock(['createSpace']);
+        $fullUrl = self::CONFIG['host'] . ':' . self::CONFIG['port'] . '/api/';
+        $array = json_decode(self::JSON, true);
+        $space = ['id' => 'space-id', 'name' => 'space name'];
+
+        $this->kibana
+            ->expects($this->once())
+            ->method('getKibanaBaseUrl')
+            ->willReturn($fullUrl);
+        $this->kibana
+            ->expects($this->once())
+            ->method('makeRequest')
+            ->with($fullUrl . 'spaces/space', 'POST', $space)
+            ->willReturn(self::JSON);
+        $this->kibana
+            ->expects($this->once())
+            ->method('toArray')
+            ->with(self::JSON)
+            ->willReturn($array);
+
+        $this->assertEquals($array, $this->kibana->createSpace($space));
     }
 
     /**

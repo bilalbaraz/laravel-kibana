@@ -10,4 +10,5 @@ final class EndpointEnums
 {
     const API = 'api';
     const GET_FEATURES = 'features';
+    const GET_SPACES = 'spaces/space';
 }
