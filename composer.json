@@ -33,6 +33,9 @@
         "sort-packages": true,
         "optimize-autoloader": true
     },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
+    },
     "extra": {
         "laravel": {
             "providers": [
