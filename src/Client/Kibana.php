@@ -74,11 +74,22 @@ class Kibana
      */
     public function updateSpace($spaceId, $space = []): array
     {
-        $spaces = $this->makeRequest(
+        $space = $this->makeRequest(
             $this->getKibanaBaseUrl() . EndpointEnums::GET_SPACES . '/' . $spaceId, 'PUT', $space
         );
 
-        return $this->toArray($spaces);
+        return $this->toArray($space);
+    }
+
+    /**
+     * @param string $spaceId
+     * @return bool
+     */
+    public function deleteSpace($spaceId): bool
+    {
+        $this->makeRequest($this->getKibanaBaseUrl() . EndpointEnums::GET_SPACES . '/' . $spaceId, 'DELETE');
+
+        return true;
     }
 
     /**

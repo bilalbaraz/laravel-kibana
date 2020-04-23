@@ -210,6 +210,28 @@ class KibanaTest extends TestCase
 
     /**
      * @test
+     * @covers ::deleteSpace
+     */
+    function it_should_delete_space()
+    {
+        $this->getClassMock(['deleteSpace']);
+        $fullUrl = self::CONFIG['host'] . ':' . self::CONFIG['port'] . '/api/';
+
+        $this->kibana
+            ->expects($this->once())
+            ->method('getKibanaBaseUrl')
+            ->willReturn($fullUrl);
+        $this->kibana
+            ->expects($this->once())
+            ->method('makeRequest')
+            ->with($fullUrl . 'spaces/space/space-id', 'DELETE')
+            ->willReturn(self::JSON);
+
+        $this->assertTrue($this->kibana->deleteSpace('space-id'));
+    }
+
+    /**
+     * @test
      * @covers ::makeRequest
      */
     function it_should_make_request()
