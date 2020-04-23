@@ -25,17 +25,14 @@ class KibanaObject extends KibanaClient
     }
 
     /**
+     * @param array $objects
      * @return array
      */
-    public function getBulkObjects(): array
+    public function getBulkObjects(array $objects = []): array
     {
         $objects = $this->makeRequest(
-            $this->getKibanaBaseUrl() . EndpointEnums::GET_BULK_OBJECTS,
-            'POST',
-            [
-                ['type' => 'index-pattern', 'id' => 'my-pattern'],
-                ['type' => 'dashboard', 'id' => 'be3733a0-9efe-11e7-acb3-3dab96693fab'],
-            ],
+            $this->getKibanaBaseUrl() . EndpointEnums::GET_BULK_OBJECTS, 'POST',
+            $objects,
             true
         );
 
