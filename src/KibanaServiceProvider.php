@@ -2,8 +2,8 @@
 
 namespace Bilalbaraz\LaravelKibana;
 
+use Bilalbaraz\LaravelKibana\Client\KibanaObject;
 use Bilalbaraz\LaravelKibana\Client\KibanaSpace;
-use Bilalbaraz\LaravelKibana\Client\KibanaRole;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,8 +24,8 @@ class KibanaServiceProvider extends ServiceProvider
             return new KibanaSpace($client, $app['config']['kibana']);
         });
 
-        $this->app->singleton(KibanaRole::class, function ($app) use ($client) {
-            return new KibanaRole($client, $app['config']['kibana']);
+        $this->app->singleton(KibanaObject::class, function ($app) use ($client) {
+            return new KibanaObject($client, $app['config']['kibana']);
         });
 
         $this->mergeConfigFrom(__DIR__ . '/../config/kibana.php', 'config');

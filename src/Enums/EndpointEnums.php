@@ -11,4 +11,6 @@ final class EndpointEnums
     const API = 'api';
     const GET_FEATURES = 'features';
     const GET_SPACES = 'spaces/space';
+    const GET_SAVED_OBJECTS = 'saved_objects';
+    const GET_BULK_OBJECTS = self::GET_SAVED_OBJECTS . '/_bulk_get';
 }

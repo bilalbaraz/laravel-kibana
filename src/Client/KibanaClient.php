@@ -29,14 +29,18 @@ abstract class KibanaClient
      * @param string $endpoint
      * @param string $method
      * @param array $body
+     * @param bool $sendAsJson
      * @return string
      */
-    public function makeRequest($endpoint, $method = 'GET', $body = []): string
+    public function makeRequest($endpoint, $method = 'GET', $body = [], $sendAsJson = false): string
     {
+        $type = $sendAsJson ? 'body' : 'form_params';
+        $data = $sendAsJson ? json_encode($body) : $body;
+
         return $this->client->request(
             $method,
             $endpoint,
-            ['headers' => ['kbn-xsrf' => true], 'form_params' => $body]
+            ['headers' => ['kbn-xsrf' => true], $type => $data]
         )
             ->getBody()
             ->getContents();
