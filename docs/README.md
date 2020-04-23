@@ -3,6 +3,7 @@
 ![Packagist Version](https://img.shields.io/packagist/v/bilalbaraz/laravel-kibana)
 ![Packagist](https://img.shields.io/packagist/l/bilalbaraz/laravel-kibana)
 [![Build Status](https://travis-ci.org/bilalbaraz/laravel-kibana.svg?branch=master)](https://travis-ci.org/bilalbaraz/laravel-kibana)
+[![codecov](https://codecov.io/gh/bilalbaraz/laravel-kibana/branch/master/graph/badge.svg)](https://codecov.io/gh/bilalbaraz/laravel-kibana)
 
 T.B.D.
 
@@ -18,7 +19,11 @@ composer require bilalbaraz/laravel-kibana
 
 T.B.D.
 
-### Test
+## Documentation
+
+Have a look at the documentation [here](https://bilalbaraz.github.io/laravel-kibana/).
+
+## Test
 
 ```bash
 ./vendor/bin/phpunit tests
