@@ -18,7 +18,11 @@ composer require bilalbaraz/laravel-kibana
 
 T.B.D.
 
-### Test
+## Documentation
+
+Have a look at the documentation [here](https://bilalbaraz.github.io/laravel-kibana/).
+
+## Test
 
 ```bash
 ./vendor/bin/phpunit tests
