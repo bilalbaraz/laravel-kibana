@@ -181,6 +181,35 @@ class KibanaTest extends TestCase
 
     /**
      * @test
+     * @covers ::updateSpace
+     */
+    function it_should_update_space()
+    {
+        $this->getClassMock(['updateSpace']);
+        $fullUrl = self::CONFIG['host'] . ':' . self::CONFIG['port'] . '/api/';
+        $array = json_decode(self::JSON, true);
+        $space = ['id' => 'space-id', 'name' => 'space name'];
+
+        $this->kibana
+            ->expects($this->once())
+            ->method('getKibanaBaseUrl')
+            ->willReturn($fullUrl);
+        $this->kibana
+            ->expects($this->once())
+            ->method('makeRequest')
+            ->with($fullUrl . 'spaces/space/space-id', 'PUT', $space)
+            ->willReturn(self::JSON);
+        $this->kibana
+            ->expects($this->once())
+            ->method('toArray')
+            ->with(self::JSON)
+            ->willReturn($array);
+
+        $this->assertEquals($array, $this->kibana->updateSpace('space-id', $space));
+    }
+
+    /**
+     * @test
      * @covers ::makeRequest
      */
     function it_should_make_request()
