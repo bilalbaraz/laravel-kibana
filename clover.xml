@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1587601910">
+  <project timestamp="1587601910">
+    <package name="Bilalbaraz\LaravelKibana\Client">
+      <file name="/Users/bilal/htdocs/base-laravel/packages/bilalbaraz/laravel-kibana/src/Client/Kibana.php">
+        <class name="Bilalbaraz\LaravelKibana\Client\Kibana" namespace="Bilalbaraz\LaravelKibana\Client" fullPackage="Bilalbaraz" package="Bilalbaraz">
+          <metrics complexity="8" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="27" coveredelements="27"/>
+        </class>
+        <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="31" type="method" name="getFeatures" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="41" type="method" name="getSpaces" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="52" type="method" name="getSpace" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="63" type="method" name="createSpace" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="76" type="method" name="makeRequest" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="79" type="stmt" count="1"/>
+        <line num="80" type="stmt" count="1"/>
+        <line num="81" type="stmt" count="1"/>
+        <line num="83" type="stmt" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="90" type="method" name="getKibanaBaseUrl" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="92" type="stmt" count="1"/>
+        <line num="99" type="method" name="toArray" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="101" type="stmt" count="1"/>
+        <metrics loc="103" ncloc="67" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="27" coveredelements="27"/>
+      </file>
+    </package>
+    <package name="Bilalbaraz\LaravelKibana\Enums">
+      <file name="/Users/bilal/htdocs/base-laravel/packages/bilalbaraz/laravel-kibana/src/Enums/EndpointEnums.php">
+        <class name="Bilalbaraz\LaravelKibana\Enums\EndpointEnums" namespace="Bilalbaraz\LaravelKibana\Enums" fullPackage="Bilalbaraz" package="Bilalbaraz">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="14" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <metrics files="2" loc="117" ncloc="77" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="27" coveredelements="27"/>
+  </project>
+</coverage>
