@@ -145,4 +145,32 @@ class KibanaObjectTest extends KibanaTestCase
 
         $this->assertEquals($array, $this->kibana->getBulkObjects($objects));
     }
+
+    /**
+     * @test
+     * @covers ::deleteObject
+     */
+    function it_should_delete_object()
+    {
+        $this->getClassMock(['deleteObject']);
+        $objectType = 'dashboard';
+        $objectId = 'dashboard-1234';
+
+        $this->kibana
+            ->expects($this->once())
+            ->method('getKibanaBaseUrl')
+            ->willReturn(self::FULL_URL);
+        $this->kibana
+            ->expects($this->once())
+            ->method('makeRequest')
+            ->with(self::FULL_URL . 'saved_objects/'. $objectType . '/' . $objectId, 'DELETE')
+            ->willReturn(self::JSON);
+        $this->kibana
+            ->expects($this->once())
+            ->method('toArray')
+            ->with(self::JSON)
+            ->willReturn([]);
+
+        $this->assertEquals([], $this->kibana->deleteObject($objectType, $objectId));
+    }
 }

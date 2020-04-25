@@ -15,4 +15,7 @@ final class EndpointEnums
     const GET_BULK_OBJECTS = self::GET_SAVED_OBJECTS . '/_bulk_get';
     const FIND_OBJECTS = self::GET_SAVED_OBJECTS . '/_find';
     const EXPORT_OBJECTS = self::GET_SAVED_OBJECTS . '/_export';
+    const DASHBOARD = 'kibana/dashboards/';
+    const EXPORT_DASHBOARD = self::DASHBOARD . 'export';
+    const IMPORT_DASHBOARD = self::DASHBOARD . 'import';
 }

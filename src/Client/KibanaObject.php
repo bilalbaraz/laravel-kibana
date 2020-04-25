@@ -71,4 +71,19 @@ class KibanaObject extends KibanaClient
 
         return $result;
     }
+
+    /**
+     * @param string $objectType
+     * @param string $objectId
+     * @return array
+     */
+    public function deleteObject(string $objectType, string $objectId): array
+    {
+        $dashboard = $this->makeRequest(
+            $this->getKibanaBaseUrl() . EndpointEnums::GET_SAVED_OBJECTS . '/' . $objectType . '/' . $objectId,
+            'DELETE'
+        );
+
+        return $this->toArray($dashboard);
+    }
 }
