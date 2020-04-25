@@ -29,6 +29,32 @@ Have a look at the documentation [here](https://bilalbaraz.github.io/laravel-kib
 ./vendor/bin/phpunit tests
 ```
 
+## Which Endpoints Have Been Implemented?
+
+- [x] Get features
+- [x] Create space
+- [x] Update space
+- [x] Get space
+- [x] Get all spaces
+- [x] Delete space
+- [ ] Copy saved objects to space
+- [ ] Resolve copy to space conflicts
+- [ ] Create or update role
+- [ ] Get specific role
+- [ ] Get all roles
+- [ ] Delete role
+- [x] Get object
+- [x] Bulk get objects
+- [x] Find objects
+- [ ] Create saved objects
+- [ ] Bulk create saved objects
+- [ ] Update object
+- [x] Delete object
+- [x] Export objects
+- [ ] Resolve import errors
+- [x] Import dashboard
+- [x] Export dashboard
+
 ## License
 
 The MIT License (MIT)
