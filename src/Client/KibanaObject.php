@@ -11,14 +11,14 @@ use Bilalbaraz\LaravelKibana\Enums\EndpointEnums;
 class KibanaObject extends KibanaClient
 {
     /**
-     * @param string $type
+     * @param string $objectType
      * @param string $objectId
      * @return array
      */
-    public function getSavedObject($type, $objectId): array
+    public function getSavedObject($objectType, $objectId): array
     {
         $objects = $this->makeRequest(
-            $this->getKibanaBaseUrl() . EndpointEnums::GET_SAVED_OBJECTS . '/' . $type . '/' . $objectId
+            $this->getKibanaBaseUrl() . EndpointEnums::GET_SAVED_OBJECTS . '/' . $objectType . '/' . $objectId
         );
 
         return $this->toArray($objects);
@@ -37,5 +37,38 @@ class KibanaObject extends KibanaClient
         );
 
         return $this->toArray($objects);
+    }
+
+    /**
+     * @param string $objectType
+     * @return array
+     */
+    public function findObjects($objectType): array
+    {
+        $objects = $this->makeRequest($this->getKibanaBaseUrl() . EndpointEnums::FIND_OBJECTS . '?type=' . $objectType);
+
+        return $this->toArray($objects);
+    }
+
+    /**
+     * @param array $objects
+     * @return array
+     */
+    public function exportObjects(array $objects = [])
+    {
+        $exportedObjects = $this->makeRequest($this->getKibanaBaseUrl() . EndpointEnums::EXPORT_OBJECTS,
+            'POST',
+            $objects,
+            true
+        );
+
+        $result = [];
+        $objectElements = explode(PHP_EOL, $exportedObjects);
+
+        foreach ($objectElements as $element) {
+            $result[] = $this->toArray($element);
+        }
+
+        return $result;
     }
 }
