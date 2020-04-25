@@ -8,7 +8,7 @@
 An easy way to use the official [Kibana REST API](https://www.elastic.co/guide/en/kibana/7.6/api.html) in your Laravel applications.
 
 ## Installation and Configuration
-Install the current version of the `bilalbaraz/laravel-kibana package via composer:
+Install the current version of the `bilalbaraz/laravel-kibana` package via composer:
 
 ```bash
 composer require bilalbaraz/laravel-kibana
