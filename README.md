@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/bilalbaraz/laravel-kibana.svg?branch=master)](https://travis-ci.org/bilalbaraz/laravel-kibana)
 [![codecov](https://codecov.io/gh/bilalbaraz/laravel-kibana/branch/master/graph/badge.svg)](https://codecov.io/gh/bilalbaraz/laravel-kibana)
 
-T.B.D.
+An easy way to use the official [Kibana REST API](https://www.elastic.co/guide/en/kibana/7.6/api.html) in your Laravel applications.
 
 ## Installation and Configuration
 Install the current version of the `bilalbaraz/laravel-kibana package via composer:
