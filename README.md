@@ -57,10 +57,10 @@ Have a look at the documentation [here](https://bilalbaraz.github.io/laravel-kib
 - [x] Delete space
 - [ ] Copy saved objects to space
 - [ ] Resolve copy to space conflicts
-- [ ] Create or update role
-- [ ] Get specific role
-- [ ] Get all roles
-- [ ] Delete role
+- [x] Create or update role
+- [x] Get specific role
+- [x] Get all roles
+- [x] Delete role
 - [x] Get object
 - [x] Bulk get objects
 - [x] Find objects

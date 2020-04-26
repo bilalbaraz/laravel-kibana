@@ -18,4 +18,5 @@ final class EndpointEnums
     const DASHBOARD = 'kibana/dashboards/';
     const EXPORT_DASHBOARD = self::DASHBOARD . 'export';
     const IMPORT_DASHBOARD = self::DASHBOARD . 'import';
+    const GET_ROLES = 'security/role';
 }

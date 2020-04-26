@@ -5,6 +5,7 @@ namespace Bilalbaraz\LaravelKibana;
 use Bilalbaraz\LaravelKibana\Client\KibanaFeature;
 use Bilalbaraz\LaravelKibana\Client\KibanaObject;
 use Bilalbaraz\LaravelKibana\Client\KibanaDashboard;
+use Bilalbaraz\LaravelKibana\Client\KibanaRole;
 use Bilalbaraz\LaravelKibana\Client\KibanaSpace;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
@@ -36,6 +37,10 @@ class KibanaServiceProvider extends ServiceProvider
 
         $this->app->singleton(KibanaDashboard::class, function ($app) use ($client) {
             return new KibanaDashboard($client, $app['config']['kibana']);
+        });
+
+        $this->app->singleton(KibanaRole::class, function ($app) use ($client) {
+            return new KibanaRole($client, $app['config']['kibana']);
         });
 
         $this->mergeConfigFrom(__DIR__ . '/../config/kibana.php', 'config');
