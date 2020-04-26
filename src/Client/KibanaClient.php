@@ -36,14 +36,14 @@ abstract class KibanaClient
     {
         $type = $sendAsJson ? 'body' : 'form_params';
         $data = $sendAsJson ? json_encode($body) : $body;
+        $structure = ['headers' => ['kbn-xsrf' => true], $type => $data];
+        $auth = [$this->config['security']['username'], $this->config['security']['password']];
 
-        return $this->client->request(
-            $method,
-            $endpoint,
-            ['headers' => ['kbn-xsrf' => true], $type => $data]
-        )
-            ->getBody()
-            ->getContents();
+        if ($this->config['security']['enabled'] === true) {
+            $structure['auth'] = $auth;
+        }
+
+        return $this->client->request($method, $endpoint, $structure)->getBody()->getContents();
     }
 
     /**

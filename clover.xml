@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1587846655">
-  <project timestamp="1587846655">
+<coverage generated="1587892098">
+  <project timestamp="1587892098">
     <package name="Bilalbaraz\LaravelKibana\Client">
       <file name="/Users/bilalbaraz/htdocs/base-laravel/packages/bilalbaraz/laravel-kibana/src/Client/KibanaClient.php">
         <class name="Bilalbaraz\LaravelKibana\Client\KibanaClient" namespace="Bilalbaraz\LaravelKibana\Client" fullPackage="Bilalbaraz" package="Bilalbaraz">
-          <metrics complexity="6" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
+          <metrics complexity="7" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="11" elements="16" coveredelements="14"/>
         </class>
         <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="24" type="stmt" count="1"/>
         <line num="25" type="stmt" count="1"/>
         <line num="26" type="stmt" count="1"/>
-        <line num="35" type="method" name="makeRequest" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="35" type="method" name="makeRequest" visibility="public" complexity="4" crap="4.05" count="1"/>
         <line num="37" type="stmt" count="1"/>
         <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
         <line num="40" type="stmt" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="43" type="stmt" count="1"/>
-        <line num="45" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="0"/>
         <line num="46" type="stmt" count="1"/>
         <line num="52" type="method" name="getKibanaBaseUrl" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="54" type="stmt" count="1"/>
         <line num="61" type="method" name="toArray" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="63" type="stmt" count="1"/>
-        <metrics loc="65" ncloc="42" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
+        <metrics loc="65" ncloc="42" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="11" elements="16" coveredelements="14"/>
       </file>
       <file name="/Users/bilalbaraz/htdocs/base-laravel/packages/bilalbaraz/laravel-kibana/src/Client/KibanaDashboard.php">
         <class name="Bilalbaraz\LaravelKibana\Client\KibanaDashboard" namespace="Bilalbaraz\LaravelKibana\Client" fullPackage="Bilalbaraz" package="Bilalbaraz">
@@ -117,6 +117,6 @@
         <metrics loc="18" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="7" loc="323" ncloc="224" classes="5" methods="17" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="53" elements="70" coveredelements="70"/>
+    <metrics files="7" loc="323" ncloc="224" classes="5" methods="17" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="52" elements="70" coveredelements="68"/>
   </project>
 </coverage>

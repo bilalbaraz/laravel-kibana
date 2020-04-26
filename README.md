@@ -28,6 +28,9 @@ After you publish the configuration file as suggested above, you may configure K
 KIBANA_VERSION=7.6.2
 KIBANA_HOST=127.0.0.1
 KIBANA_PORT=5601
+KIBANA_SECURITY_ENABLED=true
+KIBANA_USERNAME=admin
+KIBANA_PASSWORD=password
 ```
 
 ### Usage

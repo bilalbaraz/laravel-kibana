@@ -16,7 +16,13 @@ use PHPUnit\Framework\MockObject\MockObject;
  */
 class KibanaClientTest extends KibanaTestCase
 {
-    const CONFIG = ['host' => '127.0.0.1', 'port' => '5601', 'api' => 'api', 'get_features' => 'get_features'];
+    const CONFIG = [
+        'host' => '127.0.0.1',
+        'port' => '5601',
+        'security' => ['enabled' => false, 'username' => 'admin', 'password' => 'admin'],
+        'api' => 'api',
+        'get_features' => 'get_features',
+    ];
     const JSON = '[{"id": "name"}]';
     /** @var Client|MockObject $client */
     private $client;
@@ -57,8 +63,9 @@ class KibanaClientTest extends KibanaTestCase
         $response = $this->createMock(Response::class);
         $stream = $this->createMock(Stream::class);
         $url = 'http://127.0.0.1:5601/api/features';
+        $structure = ['headers' => ['kbn-xsrf' => true], 'form_params' => []];
 
-        $this->client->expects($this->once())->method('request')->with('GET', $url)->willReturn($response);
+        $this->client->expects($this->once())->method('request')->with('GET', $url, $structure)->willReturn($response);
         $response->expects($this->once())->method('getBody')->willReturn($stream);
         $stream->expects($this->once())->method('getContents')->willReturn(self::JSON);
 
